@@ -1,0 +1,107 @@
+/* CSS Document */
+$fontFamily:"Microsoft YaHei","SimHei","SimSun";
+$fontSize:12px;
+/*---公用基础设置---*/
+html{
+    font-size:14px; 
+    font-family:$fontFamily;
+    background: #ffffff;
+    height: 100%;
+    overflow: hidden;
+}
+body{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+/*css-reset*/
+html,body,div,ul,ol,li,dl,dt,dd,p,span,em,strong,b,i,h1,h2,h3,h4,form,iframe,table,thead,tbody,input,button,video,textarea,select,option,img,a,xmp,pre,code,h1,h2,h3,h4,canvas{ 
+	margin:0; 
+	padding:0;
+	word-break:break-all;
+    word-wrap:break-word;
+    outline:none;
+}
+audio,video,ul,ol,dl,dt,dd,p,img{ 
+    display:block; 
+    border:0
+}
+a{ 
+	text-decoration:none; 
+	-moz-user-select: none; /*火狐*/
+    -webkit-user-select: none; /*webkit浏览器*/
+    -ms-user-select: none; /*IE10*/
+    -khtml-user-select: none; /*早期浏览器*/
+    user-select: none;
+}
+a:hover{ text-decoration:none}
+li{ display:block; list-style:none}
+textarea{
+    resize: none;
+    outline: none; 
+    font-family:$fontFamily;
+}
+input{
+    outline:none;
+    font-size:$fontSize;
+}
+input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0px 1000px white inset !important;
+}
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+    background-color: #eee;
+    border-radius: 10px;
+}
+        
+::-webkit-scrollbar-track {
+    background-color: #eee;   
+    border-radius: 10px;
+}       
+::-webkit-scrollbar-thumb {
+    background: #c1c1c1;
+    border-radius: 10px;
+}
+::-webkit-input-placeholder{ 
+	color: #bdbdbd !important;
+}
+::-moz-placeholder{ 
+	color: #bdbdbd !important;
+}
+::-ms-input-placeholder{  
+	color: #bdbdbd !important;
+}
+input[disabled]{
+    background:rgba(184, 184, 184,0.5);
+    color: #9a9a9a;
+}
+/*---顶级样式名称---*/
+/*清理浮动*/
+.clear{*height:1%;}
+.clear:after{
+	content:".";
+	display: block;
+	width: 0;
+	height: 0;
+	line-height: 0; 
+	font-size: 0; 
+	clear:both;
+	visibility:hidden;
+}
+/*隐藏*/
+.hide{ display:none !important}
+/*显示*/
+.show{ display:block !important}
+/*隐藏*/
+.hidden{
+    visibility: hidden !important;
+}
+/*字体撑开*/
+.null{ 
+    display:block; 
+    overflow:hidden; 
+    font-size:0; 
+    line-height:0; 
+    text-indent:-999px
+}
