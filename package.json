@@ -12,7 +12,7 @@
     "老虎app",
     "laohuapp"
   ],
-  "author": "lc&gyq",
+  "author": "lc",
   "license": "ISC",
   "devDependencies": {
     "@babel/core": "^7.12.3",
