@@ -3,9 +3,9 @@ module.exports = projectInfo => {
     return {
         splitChunks: {
             chunks: "all",
-            minSize:100,
             cacheGroups: { // 缓存组
                 vendors: {
+                    minSize:1,
                     test: /[\\/]node_modules[\\/]/,
                     priority: -10,
                     name(module, chunks, cacheGroupKey) {
