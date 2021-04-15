@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2020-11-13 19:54:18
- * @LastEditTime: 2021-04-15 15:03:11
+ * @LastEditTime: 2021-04-15 15:20:51
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \gulp-webpack\src\html\layout\index.html
@@ -48,9 +48,11 @@
     }
     <!--页面js-->
     @@if(projectInfo.mode == 'development'){
+        <script type="text/javascript" src="../js/vendors.js?v=@@projectInfo.version"></script>
         <script type="text/javascript" src="../js/@@pageInfo.name.js?v=@@projectInfo.version"></script>
     }
     @@if(projectInfo.mode == 'production'){
+        <script type="text/javascript" src="../js/vendors-min.js?v=@@projectInfo.version"></script>
         <script type="text/javascript" src="../js/@@pageInfo.name-min.js?v=@@projectInfo.version"></script>
     }
     @@if(pageInfo.innerScript){
