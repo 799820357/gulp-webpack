@@ -1,3 +1,11 @@
+/*
+ * @Author: your name
+ * @Date: 2020-11-13 19:54:18
+ * @LastEditTime: 2021-04-15 09:54:05
+ * @LastEditors: your name
+ * @Description: In User Settings Edit
+ * @FilePath: \gulp-webpack\webpack.config.js
+ */
 //entry
 const entry = require('./webpack-config/entry');
 //output
@@ -19,6 +27,6 @@ module.exports = projectInfo => {
         },
         resolve: resolve(projectInfo),
         optimization: optimization(projectInfo),
-        devtool: projectInfo.mode == 'production' ? false : 'cheap-module-eval-source-map'
+        devtool: projectInfo.mode == 'production' ? false : 'eval-cheap-module-source-map'
     };
 };
