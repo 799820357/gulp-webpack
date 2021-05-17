@@ -215,8 +215,9 @@ const connect = done => {
 //通用任务
 const task = series(
     clean, 
-    parallel(html, css, copyImage, js, copyJsLib), 
-    parallel(imageMin, cssRename, cssMin)
+    parallel(css, copyImage, js, copyJsLib), 
+    parallel(imageMin, cssRename, cssMin),
+    html
 )
 
 exports.default = series(task,connect,done => {
