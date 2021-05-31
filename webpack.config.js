@@ -19,6 +19,7 @@ const optimization = require('./webpack-config/optimization');
 
 module.exports = projectInfo => {
     return {
+        target: ['web', 'es5'],
         mode: projectInfo.mode,
         entry: entry(projectInfo),
         output: output(projectInfo),
