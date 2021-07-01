@@ -35,7 +35,7 @@ const clean = done => {
 }
 //构建html
 const html = done => {
-    let result = src(
+    return src(
         path.join(projectInfo.entry, 'html', '*.html')
     )
     .pipe(
@@ -53,13 +53,6 @@ const html = done => {
             path.join(projectInfo.output, 'html')
         )
     )
-    //判断是否需要刷新
-    if(projectInfo.mode == 'development'){
-        result.pipe(
-            gulpConnect.reload()
-        )
-    }
-    return result
 }
 //scss => css
 const css = done => {
@@ -212,13 +205,24 @@ const connect = done => {
     }
     done();
 }
+const reload = done => {
+    if(projectInfo.mode == 'production'){
+        done()
+    }else{
+        return src(
+            path.join(projectInfo.output)
+        )
+        .pipe(
+            gulpConnect.reload()
+        )
+    }
+}
 //通用任务
 const task = series(
     clean, 
     parallel(copyJsLib, copyCss, copyImage, copyFont),
     parallel( css,js),
-    cssRename,
-    cssMin,
+    parallel( cssRename,cssMin),
     imageMin,
     html 
 )
