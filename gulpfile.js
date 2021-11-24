@@ -220,11 +220,12 @@ const reload = done => {
 //通用任务
 const task = series(
     clean, 
-    parallel(copyJsLib, copyCss, copyImage, copyFont),
+    parallel(copyJsLib, copyImage),
     parallel( css,js),
     parallel( cssRename,cssMin),
     imageMin,
-    html 
+    html,
+	reload
 )
 
 exports.default = series(task,connect,done => {
